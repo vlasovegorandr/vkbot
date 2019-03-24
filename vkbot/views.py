@@ -10,10 +10,8 @@ from threading import Thread
 #    return decorator
 
 def run_server(request):
-    thread1 = Thread(target=Listener())
-    thread1.start()
-    thread2 = Thread(target=render(request, 'homepage.html'))
-    #thread2.start()
-    return thread2.start() 
+    lstnr = Listener()
+    return render(request, 'homepage.html')
+
     
     
